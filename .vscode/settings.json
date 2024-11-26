@@ -1,0 +1,5 @@
+{
+    // Ensure exactly one newline at the end of files.
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true
+}

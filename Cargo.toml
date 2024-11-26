@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+members = [
+    "bmfw",
+    "libbmfw",
+]
+
+[workspace.dependencies]
+binrw = "0.13.0"
+libbmfw = { path = "./libbmfw" }
+tracing = "0.1.37"
+
+[workspace.dependencies.tracing-subscriber]
+version = "0.3.17"
+features = ["env-filter"]
