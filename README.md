@@ -46,13 +46,13 @@ Firmware files can be found in a few places:
 * macOS:
   * `/Applications/Blackmagic ATEM Switchers/ATEM Setup.app/Contents/Resources`
   * `/Library/Application Supports/Blackmagic Design/*/AdminUtility/Plugins/*/Resources`
-* Windows: `Program Files/Blackmagic Design/*/`
+* Windows: `Program Files/Blackmagic Design/*/Setup/AdminUtility/Plugins/*/Resources`
 
 You can find which firmware versions are included with a Blackmagic setup tool
 via its debug window: hold the <kbd>Shift</kbd> key and double-left-click the
 lower left corner of the window where you have a normal mouse cursor.
 
-Note: the debug window *cannot* be accessed by pressing <kbd>Tab</kbd> or using
+The debug window *cannot* be accessed by pressing <kbd>Tab</kbd> or using
 accessibility tools.
 
 [^wpid]: For the Web Presenter, this is the product ID of the front-panel
@@ -70,9 +70,10 @@ via:
 
 ## Firmware structure
 
-Most Blackmagic firmware files consist of a few parts:
+Blackmagic firmware files consist of one or more resources:
 
 * FPGA gateware, which is used for SDI/HDMI capture/switching and runs a
   MicroBlaze (or PowerPC?) softcore
 * ELF with software for the MicroBlaze or PowerPC core
-* Fonts, image and string resources as a `tar` archive
+* `tar` archive containing non-executable resources (eg: fonts, images, strings)
+* `tar` archive containing (encrypted?) gateware / software
