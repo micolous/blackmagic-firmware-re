@@ -1,3 +1,7 @@
+//! Library for parsing Blackmagic firmware image files.
+//!
+//! The firmware file is represented by the [FirmwareFile] structure.
+
 use binrw::{binrw, helpers::until_eof};
 use flate2::read::ZlibDecoder;
 use std::io::SeekFrom;
@@ -12,6 +16,10 @@ pub use crate::{
 pub type Result<T> = std::result::Result<T, Error>;
 
 /// ATEM firmware image file
+///
+/// This is designed for use with the [`binrw::BinRead`] trait.
+///
+/// See `bmfw/src/main.rs` for example usage.
 ///
 /// ## File format
 ///
@@ -55,7 +63,7 @@ pub struct FirmwareFile {
 ///
 /// * `u16`: magic value: `0xBDBD`
 /// * `u16`: format version? always 1
-/// * `u32`: ?
+/// * `u32`: ? (`unknown1`)
 /// * `u32`: total resource size in bytes, including headers
 /// * `u16`: header length
 /// * `bool`: compression enabled (zlib)
@@ -71,17 +79,26 @@ pub struct FirmwareFile {
 #[brw(big, magic = 0xBDBD0001u32)]
 pub struct Resource {
     unknown1: u32,
+
+    /// Total resource size in bytes, including headers
     #[bw(try_calc(u32::try_from(payload.len() + header.len() + Self::MIN_LENGTH)))]
-    length: u32,
+    pub length: u32,
+
+    /// Header length
     #[bw(try_calc(u16::try_from(header.len() + Self::MIN_LENGTH)))]
-    header_length: u16,
+    pub header_length: u16,
 
     /// Compression enabled; 1 = zlib
     pub compression: u8,
+
+    /// Type
     pub typ: u8,
-    unpacked_length: u32,
+
+    /// Unpacked length
+    pub unpacked_length: u32,
     unknown7: u32,
 
+    /// Additional headers
     #[br(count = header_length - 24)]
     pub header: Vec<u8>,
 
