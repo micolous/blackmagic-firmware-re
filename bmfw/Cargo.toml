@@ -13,7 +13,7 @@ readme = "README.md"
 [dependencies]
 binrw.workspace = true
 libbmfw.workspace = true
-thiserror = "2.0.3"
+thiserror.workspace = true
 tracing.workspace = true
 tracing-subscriber.workspace = true
 

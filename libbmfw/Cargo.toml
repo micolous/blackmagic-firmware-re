@@ -8,10 +8,11 @@ license = "Apache-2.0"
 version = "0.1.1"
 edition = "2021"
 repository = "https://github.com/micolous/blackmagic-firmware-re"
+readme = "README.md"
 
 [dependencies]
 binrw.workspace = true
 flate2 = "1.0"
 hex = "0.4.3"
 sha2 = "0.10.8"
-thiserror = "2.0.3"
+thiserror.workspace = true

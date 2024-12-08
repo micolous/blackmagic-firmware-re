@@ -8,6 +8,7 @@ members = [
 [workspace.dependencies]
 binrw = "0.13.0"
 tracing = "0.1.37"
+thiserror = "2.0.3"
 
 [workspace.dependencies.libbmfw]
 path = "./libbmfw"
