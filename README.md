@@ -283,19 +283,23 @@ USB PID  | Family | Device
 `0xbedb` | IP Video 2 DFU | Blackmagic 2110 IP Converter 3x3G
 `0xbee4` | ATEM D2 | ATEM 1 M/E Advanced Panel 20
 `0xbee5` | ATEM D2 | ATEM 1 M/E Advanced Panel 30
-`0xbef0` | ATEM Panels Micro | ATEM Micro Panel
+`0xbef0` | ATEM Panels Micro | [ATEM Micro Panel][atem-micro-panel]
 `0xbef3` | Micro Converters DFU | Blackmagic 2110 IP Mini IP to HDMI SFP
 `0xbef4` | Micro Converters DFU | Blackmagic 2110 IP Mini BiDirect 12G SFP
 `0xbef5` | Micro Converters DFU | Blackmagic 2110 IP Mini IP to HDMI
 `0xbef6` | Micro Converters DFU | Blackmagic 2110 IP Mini BiDirect 12G
+**`0xbf__`** | ... | ... 
+`0xbf01` | ATEM Panels Micro | [ATEM Micro Camera Panel][atem-micro-camera-panel]
 
 [adv-panel]: https://www.blackmagicdesign.com/products/atemconstellation/advancedpanel
 [atem-8k]: https://www.blackmagicdesign.com/products/atemconstellation8k
 [atem-cam]: https://www.blackmagicdesign.com/products/atemcameracontrolpanel
 [atem-constellation]: https://www.blackmagicdesign.com/products/atemconstellation
+[atem-micro-camera-panel]: https://www.blackmagicdesign.com/products/atemconstellation/techspecs/W-ABP-12
+[atem-micro-panel]: https://www.blackmagicdesign.com/products/atemconstellation/techspecs/W-ABP-11
 [atem-mini]: https://www.blackmagicdesign.com/products/atemmini
 [atem-sdi]: https://www.blackmagicdesign.com/products/atemsdi
 [atem-tv]: https://www.blackmagicdesign.com/products/atemtelevisionstudio
-[mini-converter]: https://www.blackmagicdesign.com/products/miniconverters
 [micro-converter]: https://www.blackmagicdesign.com/products/microconverters
+[mini-converter]: https://www.blackmagicdesign.com/products/miniconverters
 [web-presenter]: https://www.blackmagicdesign.com/products/blackmagicwebpresenter
